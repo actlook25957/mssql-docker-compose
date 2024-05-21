@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-CU25-ubuntu-20.04
+    container_name: mssql
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: yourStrong(!)Password
+      # MSSQL_PID: Evaluation
+    volumes:
+      - ./data:/var/opt/mssql/data
+    ports:
+      - 1433:1433
+  
